@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <input name="radio-btn" type="radio" id="radio1">
+            <input name="radio-btn" type="radio" id="radio2">
+            <input name="radio-btn" type="radio" id="radio3">
+            <input name="radio-btn" type="radio" id="radio4">
+            <input name="radio-btn" type="radio" id="radio5">
+
+            <div class="slide first">
+                <img src="../img/img1.jpeg" alt="img1">
+            </div>
+            <div class="slide">
+                <img src="../img/img2.jpeg" alt="img2">
+            </div>
+            <div class="slide">
+                <img src="../img/img3.jpeg" alt="img3">
+            </div>
+            <div class="slide">
+                <img src="../img/img4.jpeg" alt="img4">
+            </div>
+            <div class="slide">
+                <img src="../img/img5.jpeg" alt="img5">
+            </div>
+            <div class="navigation-auto">
+                <div class="auto-btn1" checked></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+            </div>
+        </div>
+        <div class="manual-navigation">
+            <label class="manual-btn" for="radio1" ></label>
+            <label class="manual-btn" for="radio2" ></label>
+            <label class="manual-btn" for="radio3" ></label>
+            <label class="manual-btn" for="radio4" ></label>
+            <label class="manual-btn" for="radio5" ></label>
+        </div>
+    </div>
+    
+    <div class="text-wrapper">
+        <div class="text-box">
+            <div class="titleText-box">
+                <p class="title">Olá professora Karlise!</p>
+            </div>
+            <div class="bodyText-box">
+                <p class="question">Temos uma pergunta para fazer a senhora</p>
+                <span class="material-symbols-sharp icon">
+                    person_raised_hand
+                </span>
+                <p class="bodyText">A senhora irá mesmo parar de dar aula para seus <span class="color">amados</span> alunos do curso Técnico em Informática <span class="color">?</span></p>
+            </div>
+            <div class="buttons-box">
+                <button class="yes" onmouseover="desvia(this)" onclick="sim()">Sim</button>
+                <button class="no" onclick="no()">Não</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>
