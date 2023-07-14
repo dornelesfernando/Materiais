@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto+Serif:ital,opsz,wght@0,8..144,500;1,8..144,100&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(45deg, #531b85 7.2%, #3b82f6 99.5%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+    animation: toLeft 1.8s;
+    margin-left: 100px;
+}
+
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -380px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid black;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: black;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+    animation: 3s;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+
+#radio5:checked ~ .first{
+    margin-left: -100%;
+}
+
+.navigation-auto div{
+    border: 2px solid #20a6ff;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: black;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: black;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: black;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: black;
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5{
+    background-color: black;
+}
+
+.text-wrapper{
+    margin-right: 100px;
+    width: 500px;
+    height: 600px;
+    background: linear-gradient(360deg, #531b85 15.2%, #3b82f6 82.5%);
+    border-radius: 25px;
+    color: white;
+    animation: toRight 1.8s;
+}
+
+.text-box{
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.titleText-box{
+    margin: 0;
+    border-bottom: 1px solid white;
+}
+
+.titleText-box .title{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bodyText-box .question{
+    font-size: 28px;
+}
+
+.bodyText-box .icon{
+    font-size: 50px;
+}
+
+.bodyText-box .bodyText{
+    font-size: 20px;
+}
+
+.bodyText-box .bodyText .color{
+    font-weight: bold;
+    background: linear-gradient(95deg, #edbc17 3.2%, #ff00bf 99.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.buttons-box{
+    display: block;
+    margin-top: 25px;
+}
+
+.buttons-box input:not(:lest-child){
+    margin-left: 25px;
+}
+
+.buttons-box .yes, .buttons-box .no{
+    font-size: 26px;
+    width: 100px;
+    height: 50px;
+}
+
+/*
+text-wrapper.
+    text-box.
+        titleText-box.
+            title.
+        bodyText-box.
+            question.
+                icon.
+            bodyText.
+                color.
+        buttons-box
+            yes
+            no
+*/
+
+
+@keyframes toLeft{
+    from{
+        transform: translateX(550px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes toRight{
+    from{
+        transform: translateX(-550px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
