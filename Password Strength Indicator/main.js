@@ -11,33 +11,40 @@ const regExpWeakMedium = /[A-Z]/;
 const regExpMedium = /\d+/;
 const regExpStrong = /(?=.*[!@#$%¨&*?_^~()])/;
 
+function updateStrengthDisplay() {
+    indicator.style.display = input.value ? "flex" : "none"
+    showBtn.style.display = input.value ? "flex" : "none"
+    text.style.display = input.value ? "flex" : "none"
+}
+
+function checkPasswordStrength(password) {
+    const isWeak = password.match(regExpWeak);
+    const isWeakMedium = password.match(regExpWeakMedium);
+    const isMedium = password.match(regExpMedium);
+    const isStrong = password.match(regExpStrong);
+
+    if(password.length < 8){
+        activateState('weak', 'Your password is too short');
+    }else if (isWeak && (!isWeakMedium && !isMedium && !isStrong)){
+        activateState('weak', 'Your password is too weak');
+    }else if (isWeakMedium || (isMedium && isWeak && !isStrong)){
+        activateState('medium', 'Your password is medium');
+    }else if (isStrong){
+        activateState('strong', 'Your password is strong');
+    }else{
+        activateState('weak', 'Your password just have numbers or is not valid');
+    }
+}
+
+function activateState(level, message) {
+    weak.classList.toggle('active', level==='weak' || level==='medium' || level==='strong');
+    medium.classList.toggle('active', level==='medium' || level==='strong');
+    strong.classList.toggle('active', level==='strong');
+    text.classList = `text ${level}`
+    text.textContent = message
+}
+
 function trigger() {
-   const password = input.value;
-   //console.log(password);
-   if(password != "") {
-       indicator.style.display = "block";
-       indicator.style.display = "flex";
-       showBtn.style.display = "flex";
-       text.style.display = "flex";
-       if(password.length <= 4 && (
-           password.match(regExpWeak)
-       )){
-           weak.classList.add('active');
-           text.classList.add('weak');
-           strong.classList.remove('active');
-           text.classList.remove('medium');
-           if(password.match(regExpWeakMedium || regExpMedium)){
-            medium.classList.add('active');
-            text.classList.add('medium');
-            strong.classList.remove('active');
-            text.classList.remove('strong');
-       
-            
-            
-       }
-   }else{
-    indicator.style.display = "none";
-    showBtn.style.display = "none";
-    text.style.display = "none";
-   }
+    updateStrengthDisplay();
+    checkPasswordStrength(input.value);
 }
