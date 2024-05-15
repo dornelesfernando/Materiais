@@ -4,8 +4,9 @@
 }
 
 html, body {
-    background-color: #fff;
+    background-color: #dfe6f6;
     height: 100vh;
+    overflow: hidden;
     display: grid;
     place-content: center;
 }
@@ -14,10 +15,11 @@ html, body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 8vmin;
-    height: 4vmin;
+    height: 10vmin;
     position: relative;
-    padding: 0 4vmin;
-    background-color: red;
+    padding: 1vmin 12vmin;
+    background-color: #a9bee8;
+    border-radius: 8vmin;
 }
 
 .hour, .minute, .second{
@@ -46,7 +48,7 @@ html, body {
     border-radius: 50%;
 }
 
-.number .pop {
+.pop {
     color: #3e6ccb;
     font-weight: bold;
     transform: scale(1.3);
