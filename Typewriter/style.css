@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.inputs {
+    padding: 50px 50px;
+    gap: 10px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.text_wrapper {
+    height: 100%;
+    font-family: 'Poppins' sans-serif;
+    font-weight: 600;
+    letter-spacing: 2vmin;
+    font-size: 100px;
+    border-bottom: 5px solid blue;
+}
+
+div p::after {
+    font-weight: 100;
+    margin-left: 2vmin;
+    content: '|';
+    animation: pula 0.7s infinite;
+}
+
+@keyframes pula {
+    0%, 100%{
+        opacity: 1;
+    }
+
+    25%, 75%{
+        opacity: 0.5;
+    }
+
+    50%{
+        opacity: 0.0;
+    }
+}
