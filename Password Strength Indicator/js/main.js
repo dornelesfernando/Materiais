@@ -4,7 +4,7 @@ const weak = document.querySelector(".weak");
 const medium = document.querySelector(".medium");
 const strong = document.querySelector(".strong");
 const text = document.querySelector(".text");
-const showBtn = document.querySelector('.showBtn') 
+const showBtn = document.querySelector('.showBtn');
 
 const regExpWeak = /[a-z]/;
 const regExpWeakMedium = /[A-Z]/;
